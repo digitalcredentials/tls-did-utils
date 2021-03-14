@@ -1,5 +1,5 @@
 {
-  "name": "tls-did-utils",
+  "name": "@digitalcredentials/tls-did-utils",
   "version": "0.0.1",
   "description": "",
   "main": "lib/index.js",
