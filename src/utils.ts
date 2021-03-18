@@ -13,12 +13,11 @@ import { Attribute } from './types';
  */
 export function hashContract(
   domain: string,
-  address: string,
   attributes: Attribute[] = [],
   expiry: Date = null,
   chains: string[][] = []
 ): string {
-  return hash({ domain, address, attributes, expiry, chains });
+  return hash({ domain, attributes, expiry, chains });
 }
 
 /**

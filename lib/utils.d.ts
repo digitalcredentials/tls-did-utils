@@ -8,7 +8,7 @@ import { Attribute } from './types';
  * @param {Date} expiry - TLS DID Contract expiry
  * @param {string[][]} chains - TLS DID Contract certificate chains
  */
-export declare function hashContract(domain: string, address: string, attributes?: Attribute[], expiry?: Date, chains?: string[][]): string;
+export declare function hashContract(domain: string, attributes?: Attribute[], expiry?: Date, chains?: string[][]): string;
 /**
  * Signs data with pem private key
  * @param {string} key - Signing key in pem format
