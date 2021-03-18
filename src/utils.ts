@@ -15,7 +15,7 @@ export function hashContract(
   domain: string,
   attributes: Attribute[] = [],
   expiry: Date = null,
-  chains: string[][] = []
+  chains: string[] = []
 ): string {
   return hash({ domain, attributes, expiry, chains });
 }

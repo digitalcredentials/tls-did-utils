@@ -26,10 +26,7 @@ describe('Utils', () => {
   });
 
   it('should encrypt and decrypt object with undefined values', async () => {
-    const hash = hashContract(
-      'example.org',
-      '0xdC2c16ccC8291c43B83D24E37900A3bed3EEd408'
-    );
+    const hash = hashContract('example.org');
     const signature = sign(privKey, hash);
     const valid = verify(cert, signature, hash);
     expect(valid).toBeTruthy();
@@ -38,13 +35,9 @@ describe('Utils', () => {
   it('should encrypt and decrypt full object', async () => {
     const hash = hashContract(
       'example.org',
-      '0xdC2c16ccC8291c43B83D24E37900A3bed3EEd408',
       [{ path: 'parent/child', value: 'value' }],
       new Date(),
-      [
-        [cert, intermediateCert],
-        [cert, intermediateCert],
-      ]
+      [cert, intermediateCert]
     );
     const signature = sign(privKey, hash);
     const valid = verify(cert, signature, hash);
