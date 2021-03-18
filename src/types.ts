@@ -10,3 +10,8 @@ export type Attribute = {
   path: string;
   value: string;
 };
+
+export type NetworkConfig = {
+  registry?: string;
+  providerConfig?: ProviderConfig;
+};
