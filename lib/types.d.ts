@@ -8,3 +8,7 @@ export declare type Attribute = {
     path: string;
     value: string;
 };
+export declare type NetworkConfig = {
+    registry?: string;
+    providerConfig?: ProviderConfig;
+};
