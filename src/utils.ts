@@ -1,6 +1,7 @@
 import { createSign, createVerify } from 'crypto';
 import hash from 'object-hash';
-import { Attribute } from './types';
+import { providers } from 'ethers';
+import { Attribute, ProviderConfig } from './types';
 
 /**
  * Hashes a TLS DID Contract
@@ -51,4 +52,22 @@ export function verify(
   verifier.end();
   const valid = verifier.verify(pemCert, signatureBuffer);
   return valid;
+}
+
+/**
+ * Returns the configured provider
+ * @param {ProviderConfig} conf - Configuration for provider
+ */
+export function configureProvider(
+  conf: ProviderConfig = {}
+): providers.Provider {
+  if (conf.provider) {
+    return conf.provider;
+  } else if (conf.rpcUrl) {
+    return new providers.JsonRpcProvider(conf.rpcUrl);
+  } else if (conf.web3) {
+    return new providers.Web3Provider(conf.web3.currentProvider);
+  } else {
+    return new providers.JsonRpcProvider('http://localhost:8545');
+  }
 }

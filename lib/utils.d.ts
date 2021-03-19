@@ -1,4 +1,5 @@
-import { Attribute } from './types';
+import { providers } from 'ethers';
+import { Attribute, ProviderConfig } from './types';
 /**
  * Hashes a TLS DID Contract
  *
@@ -23,3 +24,8 @@ export declare function sign(key: string, data: string): string;
  * @param {string} data - data that has been signed
  */
 export declare function verify(pemCert: string, signature: string, data: string): boolean;
+/**
+ * Returns the configured provider
+ * @param {ProviderConfig} conf - Configuration for provider
+ */
+export declare function configureProvider(conf?: ProviderConfig): providers.Provider;
