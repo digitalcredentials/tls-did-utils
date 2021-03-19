@@ -61,11 +61,11 @@ export function verify(
 export function configureProvider(
   conf: ProviderConfig = {}
 ): providers.Provider {
-  if (conf.provider) {
-    return conf.provider;
-  } else if (conf.rpcUrl) {
+  if (conf?.provider) {
+    return conf?.provider;
+  } else if (conf?.rpcUrl) {
     return new providers.JsonRpcProvider(conf.rpcUrl);
-  } else if (conf.web3) {
+  } else if (conf?.web3) {
     return new providers.Web3Provider(conf.web3.currentProvider);
   } else {
     return new providers.JsonRpcProvider('http://localhost:8545');

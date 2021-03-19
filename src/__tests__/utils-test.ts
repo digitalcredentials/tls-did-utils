@@ -1,6 +1,5 @@
-import { rootCertificates } from 'tls';
 import { readFileSync } from 'fs';
-import { sign, hashContract, verify } from '../utils';
+import { sign, hashContract, verify, configureProvider } from '../utils';
 
 const keyPath = '/ssl/private/privKey.pem';
 const certPath = '/ssl/certs/cert.pem';
@@ -42,5 +41,13 @@ describe('Utils', () => {
     const signature = sign(privKey, hash);
     const valid = verify(cert, signature, hash);
     expect(valid).toBeTruthy();
+  });
+
+  it('should configure provider', async () => {
+    let provider = configureProvider();
+    expect(provider).toBeTruthy();
+
+    provider = configureProvider(null);
+    expect(provider).toBeTruthy();
   });
 });
