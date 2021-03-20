@@ -34,7 +34,10 @@ describe('Utils', () => {
   it('should encrypt and decrypt full object', async () => {
     const hash = hashContract(
       'example.org',
-      [{ path: 'parent/child', value: 'value' }],
+      [
+        { path: 'parent/child', value: 'value' },
+        { path: 'parent/child2', value: 'value2' },
+      ],
       new Date(),
       [cert, intermediateCert]
     );
