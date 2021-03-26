@@ -31,5 +31,10 @@
   "dependencies": {
     "ethers": "^5.0.32",
     "object-hash": "^2.1.1"
-  }
+  },
+  "files": [
+    "LICENSE",
+    "Readme.md",
+    "lib/"
+  ]
 }
