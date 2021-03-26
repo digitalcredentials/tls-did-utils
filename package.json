@@ -32,6 +32,9 @@
     "ethers": "^5.0.32",
     "object-hash": "^2.1.1"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "LICENSE",
     "Readme.md",
