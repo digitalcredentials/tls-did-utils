@@ -1,5 +1,12 @@
 import { readFileSync } from 'fs';
-import { sign, hashContract, verify, configureProvider } from '../utils';
+import {
+  sign,
+  hashContract,
+  verify,
+  configureProvider,
+  sortEvents,
+} from '../index';
+import { BigNumber, Event } from 'ethers';
 
 const keyPath = '/ssl/private/privKey.pem';
 const certPath = '/ssl/certs/cert.pem';
